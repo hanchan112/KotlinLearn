@@ -1,3 +1,7 @@
+import Direction.Directions
+import kotlinx.coroutines.delay
+import rx_learn.justOperator
+
 //fun simple(): List<Int> = listOf(1, 2, 3)
 
 fun simple(): Sequence<Int> = sequence { // sequence builder
@@ -8,25 +12,20 @@ fun simple(): Sequence<Int> = sequence { // sequence builder
 }
 
 suspend fun simpleS(): List<Int> {
-    //delay(1000) // pretend we are doing something asynchronous here
+    delay(1000) // pretend we are doing something asynchronous here
     return listOf(1, 2, 3)
 }
 
 
 fun main() {
-    simple().forEach { value ->
-
+    /*simple().forEach { value ->
         println(value)
     }
+
+    println(Directions.SOUTH)
+
+    Direction.Directions.values().forEach {
+        println(it)
+    }*/
+    justOperator()
 }
-
-
-/*
-
-fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-}*/
